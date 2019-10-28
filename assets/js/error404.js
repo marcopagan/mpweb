@@ -3,7 +3,7 @@ let imgs = [];
 let sad;
 
 function preload(){
-    sad = loadImage("assets/img/sad.png");
+    sad = loadImage("https://marcopagan.com/assets/img/sad.png");
 }
 
 function setup() {
