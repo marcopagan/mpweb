@@ -18,7 +18,10 @@ $(document).ready(function(){
 
                   hamb_closed.click(function() { 
                         dropdown.removeClass('hidden');
-                        $('body').css('padding-top', '243px');
+                        $('body').css('padding-top', '262px');
+                        $('.navbar').css('background', 'white');
+                        $('.navbar').css('padding-bottom', '1em');
+                        $('.navbar').css('border-bottom', 'solid 2px black');
                         hamb_closed.css('display', 'none');
                         hamb_opened.css('display', 'block');
                   });
@@ -26,12 +29,18 @@ $(document).ready(function(){
                   hamb_opened.click(function() { 
                         dropdown.addClass('hidden');
                         $('body').css('padding-top', '0px');
+                        $('.navbar').css('background', 'none');
+                        $('.navbar').css('padding-bottom', '0.5em');
+                        $('.navbar').css('border-bottom', 'none');
                         hamb_closed.css('display','block');
                         hamb_opened.css('display','none');
                   });
 
             } else {
                   $('body').css('padding-top', '0px');
+                  $('.navbar').css('background', 'none');
+                  $('.navbar').css('padding-bottom', '0.5em');
+                  $('.navbar').css('border-bottom', 'none');
                   hamb_closed.css('display','none');
                   hamb_opened.css('display','none');
                   extended.removeClass('hidden');
