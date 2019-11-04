@@ -1,0 +1,349 @@
+/* FONTS */
+@font-face {
+    font-family: 'Favorit';
+    src: url('fonts/FavoritTumblr-85.woff') format('woff'),
+         url('fonts/FavoritTumblr-85.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Favorit';
+    src: url('fonts/FavoritTumblr-Medium.woff') format('woff'),
+         url('fonts/FavoritTumblr-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'HambIcon';
+    src: url('fonts/hamb_icon.woff') format('woff'),
+         url('fonts/hamb_icon.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+
+/* GENERAL */
+body{
+  padding:0;
+  font-family: "Favorit", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  background: #FFF;
+}
+
+.content_box p{
+  font-size: 18px;
+}
+
+.content_box{
+  padding-top: 100px;
+}
+
+.hidden{
+  display: none;
+}
+
+.maxwidth{
+  width: 100%;
+}
+
+.sketch_js{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: visible;
+}
+
+
+::selection {
+    background-color: black;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: black;
+    color: white;
+}
+
+
+
+/* SPACING */
+.rowspace{
+  margin-top: 1em;
+}
+
+.rightmargin{
+  margin-right: 1em;
+}
+
+.colspace0{
+  margin-left: 1em;
+}
+
+.colspace1{
+  margin-left: 6em;
+}
+
+.colspace2{
+  margin-left: 11em;
+}
+
+.colspace3{
+  margin-left: 16em;
+}
+
+.margin_bottom{
+  margin-bottom: 2.5em;
+}
+
+
+
+/* BOXES */
+.mybox{
+  color: #000;
+  font-weight: normal;
+  padding: 16px 26px 16px 26px;
+  border: solid black 2px;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}
+
+.mybox_margin_bottom{
+  margin-bottom: 1.5em;
+}
+
+.title_box{
+  color: #000;
+  font-weight: normal;
+  padding: 16px 26px 16px 26px;
+}
+
+.alink{
+  background: white;
+}
+
+.alink:focus{
+  outline: none;
+}
+
+.alink:hover{
+  color: #000;
+  text-decoration: none;
+  -webkit-box-shadow: 10px 10px #000;
+  box-shadow: 10px 10px #000;
+}
+
+.alink:active{
+  color: #AAA;
+  text-decoration: none;
+  -webkit-box-shadow: 15px 10px #AAA;
+  box-shadow: 15px 10px #AAA;
+}
+
+.nolink{
+  background: white;
+}
+
+.red_title{
+  color: #FF0000;
+}
+.red_box:hover{
+  -webkit-box-shadow: 10px 10px #FF0000;
+  box-shadow: 10px 10px #FF0000;
+}
+
+.gre_title{
+  color: #55AA00;
+}
+.gre_box:hover{
+  -webkit-box-shadow: 10px 10px #55AA00;
+  box-shadow: 10px 10px #55AA00;
+}
+
+.blu_title{
+  color: #3333FF;
+}
+.blu_box:hover{
+  -webkit-box-shadow: 10px 10px #3333FF;
+  box-shadow: 10px 10px #3333FF;
+}
+
+.yel_title{
+  color: #FFAA00;
+}
+.yel_box:hover{
+  -webkit-box-shadow: 10px 10px #FFAA00;
+  box-shadow: 10px 10px #FFAA00;
+}
+
+.pur_title{
+  color: #BB66DD;
+}
+.pur_box:hover{
+  -webkit-box-shadow: 10px 10px #BB66DD;
+  box-shadow: 10px 10px #BB66DD;
+}
+
+
+
+/* HEADER */
+.navbar{
+  background: transparent;
+  z-index: 9999;
+}
+
+#hamburger{
+  font-family: "HambIcon";
+}
+
+.vline{
+  height: 1em;
+  width: 100%;
+  margin-left: 3.6em;
+  background: transparent;
+  border-left: solid black 2px;
+}
+
+.vlongline{
+  height: 63px;
+  width: 3em;
+  margin-left: 3.6em;
+  background: transparent;
+  border-left: solid black 2px;
+}
+
+.hline{
+  height: 32px;
+  width: 100%;
+  background: transparent;
+  border-bottom: solid black 2px;
+}
+
+.hline_exp{
+  height: 32px;
+  width: 42px;
+  background: transparent;
+  border-bottom: solid black 2px;
+}
+
+.angline{
+  height: 32px;
+  width: 3em;
+  margin-left: 3.6em;
+  background: transparent;
+  border-bottom: solid black 2px;
+  border-left: solid black 2px;
+}
+
+
+
+/* CONTACTS */
+.contacts_margin{
+  padding-bottom: 1em;
+}
+
+.contacts_text label{
+  font-size: 16px;
+}
+
+.contacts_text input{
+  font-size: 16px;
+}
+
+.contacts_text textarea{
+  font-size: 16px;
+}
+
+.contacts_text button{
+  font-size: 16px;
+}
+
+
+
+/*MEDIA QUERY*/
+@media (min-width: 1px) {
+  .link404 a{
+    font-size: 10px;
+  }
+
+  .link404 h1{
+    font-size: 28px;
+  }
+}
+
+
+
+@media (min-width: 576px) {
+  .insidebox_about{
+    width: 100%;
+  }
+
+  .link404 a{
+    font-size: 18px;
+  }
+
+  .link404 h1{
+    font-size: 40px;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .insidebox_about{
+    width: 83%;
+  }
+
+  .link404 a{
+    font-size: 18px;
+  }
+
+  .link404 h1{
+    font-size: 40px;
+  }
+}
+
+
+
+@media (min-width: 992px) {
+  .insidebox_about{
+    width: 80%;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

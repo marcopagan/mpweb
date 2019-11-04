@@ -1,0 +1,127 @@
+/*REPLACING BOOTSTRAP*/
+p{
+  margin: 0px;
+}
+
+a{
+  color: black;
+  -webkit-transition: transform .2s;
+  transition: transform .2s;
+}
+
+a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  color: #FFF;
+  background-color: #000;
+  border-color: #000;
+  border-width: 2px;
+  border-radius: 0px;
+  padding: 16px 36px 16px 36px;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}
+
+.btn-primary:hover{
+  color: #000;
+  background-color: #FFF;
+  border-color: #000;
+  -webkit-box-shadow: 3px 3px #000;
+  box-shadow: 3px 3px #000;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #FFF;
+  background-color: #000;
+  border-color: #000;
+  box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #000;
+  background-color: #FFF;
+  border-color: #000;
+  -webkit-box-shadow: 3px 3px #AAA;
+  box-shadow: 3px 3px #AAA;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  color: #AAA;
+  -webkit-box-shadow: 5px 3px #AAA;
+  box-shadow: 5px 3px #AAA;
+}
+
+textarea.form-control {
+  height: 200px;
+}
+.form-control{
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+  border-radius: 0px;
+  border-width: 2px;
+  outline: 0;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}
+
+.form-control:focus {
+  color: #000;
+  border-color: #000;
+  -webkit-box-shadow: 3px 3px #000;
+  box-shadow: 3px 3px #000;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #000;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2300DD44' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+  border-color: #000;
+  -webkit-box-shadow: 3px 3px #00DD44;
+  box-shadow: 3px 3px #00DD44;
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid {
+  border-color: #000;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FF0000' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  border-color: #000;
+  -webkit-box-shadow: 3px 3px #FF0000;
+  box-shadow: 3px 3px #FF0000;
+}
+
+.reversed{
+  padding: 3rem 0 0 0;
+}
+
+.reversed .control-label{
+  margin: -4.5rem 0 0 0;
+  float: left;
+}
+
+input.is-valid ~ label{
+  color: green; font-size: 12px;
+  font-weight: bold;
+}
+
+input.is-invalid ~ label{
+  color: #dc3545;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+
+
+
