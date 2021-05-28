@@ -56,7 +56,7 @@ function setup() {
         initializeDivPosition();
     }
 
-    if (false) {
+    if (true) {
         setInterval(() => {
             if (options.userPause) {
                 autoPlay(false, 'box'+count, false);
