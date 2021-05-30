@@ -1,0 +1,320 @@
+/* FONTS */
+@font-face {
+  font-family: "EBGaramond12";
+  src: url("font/EBGaramond12-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EBGaramond12";
+  src: url("font/EBGaramond12-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "EBGaramond08";
+  src: url("font/EBGaramond08-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EBGaramond08";
+  src: url("font/EBGaramond08-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
+
+
+/* GENERAL */
+:root {
+  --accent: #FFF;
+  --back: #000;
+  --valid: rgb(0, 200, 150);
+  --invalid: rgb(255, 200, 0);
+  --textSmall: 15px;
+  --textMedium: 20px;
+  --gridstep: 24px;
+}
+
+html{
+    min-height:100%;
+    position:relative;
+    overflow-x: hidden;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  transition: all .3s;
+}
+
+body{
+  font-family: EBGaramond12, Garamond, serif;
+  font-size: var(--textMedium);
+  line-height: 1.2;
+  background: var(--back);
+  color: var(--accent);
+  height:100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+svg{
+  width: 100vw;
+  height: 100vh;
+  z-index: 105;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+svg rect{
+  -webkit-transition: stroke-opacity 1s, fill-opacity 1s;
+  -moz-transition: stroke-opacity 1s, fill-opacity 1s,;
+  -o-transition: stroke-opacity 1s, fill-opacity 1s,;
+  transition: stroke-opacity 1s, fill-opacity 1s,;
+}
+
+h1{
+  font-size: var(--textMedium);
+}
+
+h3, p, a, li{
+  font-size: var(--textMedium);
+}
+
+a{
+  transition: color .3s;
+  color: var(--valid);
+  text-decoration: none;
+}
+
+a:hover{
+  font-style: italic;
+}
+
+li{
+  text-indent: 1em;
+}
+
+i{
+  font-style: italic;
+}
+
+::selection {
+  color: unset;
+}
+
+::-moz-selection {
+  color: unset;
+}
+
+.hidden{
+  display: none;
+}
+
+.page_margin{
+  margin-left: var(--gridstep);
+  margin-right: var(--gridstep);
+  margin-top: var(--gridstep);
+}
+
+#foreground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  transition: margin-right .5s;
+}
+
+#background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.to_recto{
+  position: absolute;
+  right: 300vw;
+}
+
+.to_label{
+  font-family: monospace;
+  font-size: var(--textSmall);
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  color: var(--invalid);
+}
+
+.to_recto .recto_inside{
+  width: fit-content;
+}
+
+#grid{
+  z-index: 90;
+}
+
+#permaRectos{
+  z-index: 100;
+}
+
+#liveRectos{
+  z-index: 105;
+}
+
+#permaRectos rect{
+  -webkit-transition: stroke-opacity 1.5s, fill-opacity 1.5s, width .2s, height .2s;
+  -moz-transition: stroke-opacity 1.5s, fill-opacity 1.5s, width .2s, height .2s;
+  -o-transition: stroke-opacity 1.5s, fill-opacity 1.5s, width .2s, height .2s;
+  transition: stroke-opacity 1.5s, fill-opacity 1.5s, width .2s, height .2s;
+}
+
+
+
+/* OPTIONS */
+#options {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 120;
+  top: 0;
+  right: 0;
+  /*background-color: var(--back);*/
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: width 0.3s;
+  /*border-left: 2px dotted var(--accent);*/
+}
+
+#options div {
+  background-color: var(--back);
+  width: 100vw;
+  padding: 8px 8px 8px var(--textMedium);
+  font-family: monospace;
+  font-size: var(--textSmall);
+  color: var(--accent);
+  display: block;
+  transition: color 0.3s;
+  border-left: 1px solid var(--accent);
+}
+
+.op_top{
+  border-top: 1px solid var(--accent);
+}
+
+.op_btm{
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 5px 5px 0px var(--accent);
+}
+
+#options input{
+  filter: grayscale(1);
+}
+
+#options .closebtn {
+  color: var(--accent);
+  font-style: italic;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+
+
+
+/* CONTENT */
+
+
+
+
+
+/*MEDIA QUERY*/
+@media (min-width: 1px) {
+  /*GENERAL*/
+
+}
+
+
+
+
+
+@media (min-width: 576px) {
+  /*GENERAL*/
+
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  /*GENERAL*/
+
+}
+
+
+
+
+
+@media (min-width: 992px) {
+  /*GENERAL*/
+
+}
+
+
+
+
+
+@media (min-width: 1200px) {
+  /*GENERAL*/
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
