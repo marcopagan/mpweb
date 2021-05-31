@@ -1,54 +1,114 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 
     <title>Marco Pagan</title>
-    <meta name="description" content="graphics and creative coding">
+    <meta name="description" content="Graphic designer and creative coder">
+    <meta name="keywords" content="Marco Pagan,design,graphic design,coding">
     <meta name="author" content="Marco Pagan">
-    <meta name="google-site-verification" content="n9aLXPdwBAe4sSHsZtbiV8QFBJZhuhqRiP8kV2l8RHc"/>
+    <link rel="canonical" href="https://marcopagan.com"/>
     <link rel="icon" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/style_bootstrap.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150977790-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-150977790-1');
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/p5.js"></script>
-    <script type="text/javascript" src="assets/js/sketch_0.js"></script>
-
+    <script type="text/javascript" src="assets/js/builder.js"></script>
 </head>
 
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar fixed-top">
-        <div class="row">
-            <a class="mybox alink colspace0" href="https://marcopagan.com">Marco Pagan</a>
-        </div>
-    </nav>
+<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto()" onmousedown="createRecto()" onmouseup="deleteRecto()">
+
+    <!-- OPTIONS -->
+    <div id="options" style="width: 0px">
+      <a href="javascript:void(0)" class="closebtn" onclick="triggerOptions()">x</a>
+      <div class="op_top">
+        <label for="op_night">Night mode:</label>
+        <input type="checkbox" id="op_night" onclick="optionsCheckbox('night')">
+      </div>
+
+      <div>
+        <label for="op_snapToGrid">Snap to grid:</label>
+        <input type="checkbox" id="op_snapToGrid" onclick="optionsCheckbox('snapToGrid')">
+      </div>
+
+      <div>
+        <label for="op_showGrid">Show grid:</label>
+        <input type="checkbox" id="op_showGrid" onclick="optionsCheckbox('showGrid')">
+      </div>
+
+      <div>
+        <label for="op_showLabel">Show label:</label>
+        <input type="checkbox" id="op_showLabel" onclick="optionsCheckbox('showLabel')">
+      </div>
+
+      <div class="op_btm">
+        <label for="op_showPermaRectos">Show rects:</label>
+        <input type="checkbox" id="op_showPermaRectos" onclick="optionsCheckbox('showPermaRectos')">
+      </div>
+      <br><br>
+      <div class="op_top op_btm"><a href="static.html" style="font-size: var(--textSmall)">Static version</a></div>
+      <br><br>
+      <div class="op_top op_btm">
+        <p style="font-size: var(--textSmall)">Website developed<br>by marcopagan</p>
+      </div>
+    </div>
+
 
 
     <!-- CONTENT -->
-    <div id="sketch_container" class="sketch_js"></div>
-
-    <div class="container content_box">
-        <div class="row">
-
-            <div class="col-lg-9 col-md-12 col-sm-12">
-                <p class="mybox alink row0 col0" href="index.html">Website under construction…</p>
-            </div>
-
+    <main id="foreground">
+      <div id="box1" class="to_recto" min-x="8", min-y="2">
+        <div class="recto_inside">
+          <p>Marco Pagan<br><i>Graphic design / coding</i></p>
         </div>
-    </div>
+      </div>
+
+
+
+      <div id="box2" class="to_recto" min-x="8", min-y="3">
+        <div class="recto_inside">
+          <p>I studied graphic design and visual communication at <a href="https://isiaurbino.net">ISIA Urbino</a>.<br>I'm interested in learning, displaying informations and parametric design.</p>
+        </div>
+      </div>
+
+
+
+      <div id="box3" class="to_recto" min-x="4", min-y="3">
+        <div class="recto_inside">
+          <h3>Contacts</h3>
+          <p><a href="mailto:marco.pagan.one@gmail.com">Mail</a></p>
+          <p><a href="http://www.instagram.com/marcopagan">Instagram</a></p>
+        </div>
+      </div>
+
+
+      <div id="box4" class="to_recto" min-x="5", min-y="1">
+        <div class="recto_inside">
+          <p><a href="policy.html">Privacy policy</a></p>
+        </div>
+      </div>
+
+
+
+      <div id="box5" class="to_recto" min-x="3", min-y="1" option="1">
+        <div class="recto_inside">
+          <p><a href="javascript:void(0)" onclick="triggerOptions()">Options</a></p>
+        </div>
+      </div>
+    </main>
+
+    <div id="background"></div>
+    <svg id="grid" style="stroke-width:0; fill-opacity: 1"></svg>
+    <svg id="liveRectos" style="stroke-width:3;"></svg>
+    <svg id="permaRectos" style="stroke-width:3;"></svg>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+
+
+
+
+    <!-- FOOTER -->
+
+
+
 </body>
 </html>
