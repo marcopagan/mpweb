@@ -16,13 +16,14 @@ let options = {
     snapToGrid : true,
     night : true,
     backgroundColor : getComputedStyle(document.body).getPropertyValue('--back'),
-    gridColor : null,
-    validColor : null,
-    invalidColor : null,
+    gridColor : [255, 255, 255],
+    validColor : undefined,
+    invalidColor : undefined,
     permaColor: [0, 0, 255],
     fillOpacity : .2,
-    waterfall: false,
-    autoplay: true
+    waterfall: true,
+    autoplay: true,
+    isMobile: undefined
 }
 
 let liveRectos = [];
@@ -32,7 +33,6 @@ let lasty;
 let m = {};
 let mouseIsPressed = 0;
 let lastKey;
-
 
 
 
@@ -247,7 +247,7 @@ function loadOptions(){
     document.getElementById('op_snapToGrid').checked = options.snapToGrid;
     document.getElementById('op_showGrid').checked = options.showGrid;
     document.getElementById('op_showLabel').checked = options.showLabel;
-    document.getElementById('op_showPermaRectos').checked = options.showPermaRectos;
+    setMobile();
     let root = document.querySelector(':root');
     root.style.setProperty('--gridstep', options.step+'px');
     root.style.setProperty('--textMedium', (options.step/1.2)+'px');
@@ -469,6 +469,22 @@ function keyPressed(e){
     }
 }
 
+
+function setMobile(){
+    let wdt = window.innerWidth;
+    let root = document.querySelector(':root');
+    if (wdt <= 576) {options.isMobile = true}
+    else{options.isMobile = false}
+    if (options.isMobile) {
+        options.step = 21;
+        root.style.setProperty('--gridstep', options.step+'px');
+        root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+    }else{
+        options.step = 24;
+        root.style.setProperty('--gridstep', options.step+'px');
+        root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+    }
+}
 
 
 
