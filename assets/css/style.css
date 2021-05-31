@@ -173,7 +173,7 @@ i{
   height: 100%;
   width: 0px;
   position: fixed;
-  z-index: 120;
+  z-index: 150;
   top: 0;
   right: 0;
   /*background-color: var(--back);*/
