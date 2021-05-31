@@ -35,8 +35,8 @@
 :root {
   --accent: #FFF;
   --back: #000;
-  --valid: rgb(0, 200, 150);
-  --invalid: rgb(255, 200, 0);
+  --valid: rgb(0, 255, 255);
+  --invalid: rgb(255, 100, 50);
   --textSmall: 15px;
   --textMedium: 20px;
   --gridstep: 24px;
@@ -251,6 +251,11 @@ i{
 /*MEDIA QUERY*/
 @media (min-width: 1px) {
   /*GENERAL*/
+  :root {
+    --textSmall: 15px;
+    --textMedium: 17.5px;
+    --gridstep: 21px;
+  }
 
 }
 
@@ -260,6 +265,11 @@ i{
 
 @media (min-width: 576px) {
   /*GENERAL*/
+  :root {
+    --textSmall: 15px;
+    --textMedium: 20px;
+    --gridstep: 24px;
+  }
 
 }
 

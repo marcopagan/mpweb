@@ -12,9 +12,16 @@
     <link rel="icon" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="assets/js/builder.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150977790-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'UA-150977790-1');
+    </script>
     <style type="text/css">
       #box1, #box2, #box3, #box4, #box5{
         left: calc(var(--gridstep)/2);
@@ -25,13 +32,7 @@
         left: calc(var(--gridstep)/2);
         width: 100vw;
       }
-
-      #box2 div{
-        width: 300px;
-      }
-
-
-
+      #box2 div{width: 300px}
       #box1{top: calc(var(--gridstep)/2)}
       #box2{top: calc((var(--gridstep)*3) + (var(--gridstep)/2))}
       #box3{top: calc((var(--gridstep)*8) + (var(--gridstep)/2))}
