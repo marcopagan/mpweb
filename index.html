@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto()" onmousedown="createRecto()" onmouseup="deleteRecto()">
+<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto(false)" onmousedown="createRecto(false)" onmouseup="deleteRecto()">
 
     <!-- OPTIONS -->
     <div id="options" style="width: 0px">
@@ -105,10 +105,10 @@
       </div>
     </main>
 
-    <div id="background"></div>
     <svg id="grid" style="stroke-width:0; fill-opacity: 1"></svg>
     <svg id="liveRectos" style="stroke-width:3;"></svg>
     <svg id="permaRectos" style="stroke-width:3;"></svg>
+    <div id="labels"></div>
     <script type="text/javascript" src="assets/js/script.js"></script>
 
 

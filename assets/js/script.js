@@ -1,4 +1,4 @@
-// CONSTANTS
+// CONSTANTS //
 const boxes = document.getElementsByClassName('to_recto').length;
 const svgns = "http://www.w3.org/2000/svg";
 /*
@@ -6,7 +6,7 @@ const svgns = "http://www.w3.org/2000/svg";
 */
 
 
-// VARIABLES
+// VARIABLES //
 let options = {
     step: 24,
     userPause : false,
@@ -19,10 +19,11 @@ let options = {
     gridColor : [255, 255, 255],
     validColor : undefined,
     invalidColor : undefined,
-    permaColor: [0, 0, 255],
+    permaColor: undefined,
     fillOpacity : .2,
     waterfall: true,
     autoplay: true,
+    autoPlaydelay: 8000,
     isMobile: undefined
 }
 
@@ -37,10 +38,14 @@ let lastKey;
 
 
 
+
 // FUNCTIONS //
 
 // RECTO LIFE //
-function createRecto(){
+function createRecto(touch){
+    if (!touch) {updateMouseXY()}
+    //switchPermaRectos();
+    //options.showPermaRectos = !options.showPermaRectos;
     mouseIsPressed++;
     let recto = new Recto(false);
     recto.createSvg(m.x, m.y, 'liveRectos');
@@ -53,8 +58,8 @@ function createRecto(){
 }
 
 
-function moveRecto(){
-    updateMouseXY();
+function moveRecto(touch){
+    if (!touch) {updateMouseXY()}
     if(mouseIsPressed){
         let recto = liveRectos[liveRectos.length-1];
         recto.updatePoints(m.x, m.y);
@@ -69,6 +74,7 @@ function moveRecto(){
 
 
 function deleteRecto(){
+    //switchPermaRectos();
     mouseIsPressed--;
     let recto = liveRectos[liveRectos.length-1];
     if (options.showLabel) {
@@ -134,6 +140,7 @@ function cleanPermaRectos(){
     if (permaRectos.length > boxes) {
         permaRectos.splice(0, 1);
         document.getElementById('permaRectos').children[0].remove();
+        if (liveRectos.length == 0) {resetContent()}
     }
 }
 
@@ -220,7 +227,6 @@ function initializeDivPosition(){
             y+=(options.step*(recto.auto.stepy+1));
             if (i == boxes-1) {
                 count = 1;
-                //liveRectos = [];
             }
         }, i*1000);
     }
@@ -255,6 +261,7 @@ function loadOptions(){
     drawGrid();
     switchNight(false);
 
+    //Intro
     let amount = int((window.innerWidth + window.innerHeight /2)*0.03);
     if (options.waterfall) {
         for(let i = 0; i < amount; i++){
@@ -274,7 +281,7 @@ function loadOptions(){
             if (options.userPause) {
                 autoPlay(false, 'box'+count, false);
             }
-        }, 3000);
+        }, options.autoPlaydelay);
 
         setInterval(() => {
             options.userPause = true;
@@ -291,22 +298,30 @@ function switchNight(swichValue){
     if (options.night) {
         root.style.setProperty('--back', '#000');
         root.style.setProperty('--accent', '#FFF');
+        //options.validColor = [50, 0, 255];
+        //options.invalidColor = [255, 200, 50];
+        //options.permaColor = [120, 0, 255];
         options.validColor = [0, 255, 255];
         options.invalidColor = [255, 100, 50];
+        options.permaColor = [0, 0, 255];
         options.gridColor = [170, 170, 170];
-        options.fillOpacity = .2;
+        options.fillOpacity = .15;
+
     }else{
         root.style.setProperty('--back', '#FFF');
         root.style.setProperty('--accent', '#000');
-        //options.validColor = [0, 0, 255];
-        //options.invalidColor = [255, 0, 0];
-        options.validColor = [0, 120, 255];
+        options.validColor = [0, 50, 255];
         options.invalidColor = [255, 100, 0];
+        options.permaColor = [255, 0, 255];
         options.gridColor = [options.validColor[0], options.validColor[1], options.validColor[2]];
         options.fillOpacity = .08;
     }
     for(let circle of document.getElementById('grid').children){
         circle.setAttributeNS(null, 'fill', 'rgb('+options.gridColor[0]+', '+options.gridColor[1]+', '+options.gridColor[2]+')');
+    }
+    for(let perma of document.getElementById('permaRectos').children){
+        perma.setAttributeNS(null, 'fill', 'rgb('+options.permaColor[0]+', '+options.permaColor[1]+', '+options.permaColor[2]+')');
+        perma.setAttributeNS(null, 'stroke', 'rgb('+options.permaColor[0]+', '+options.permaColor[1]+', '+options.permaColor[2]+')');
     }
     root.style.setProperty('--valid', 'rgb('+options.validColor[0]+', '+options.validColor[1]+', '+options.validColor[2]+')');
     root.style.setProperty('--invalid', 'rgb('+options.invalidColor[0]+', '+options.invalidColor[1]+', '+options.invalidColor[2]+')');
@@ -483,10 +498,37 @@ function setMobile(){
         options.step = 24;
         root.style.setProperty('--gridstep', options.step+'px');
         root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+        //Touch
+        window.addEventListener('touchstart', function(e){
+            if (options.snapToGrid) {
+                m.x = snap(e.touches[0].clientX);
+                m.y = snap(e.touches[0].clientY);
+            }else{
+                m.x = e.touches[0].clientX;
+                m.y = e.touches[0].clientY;
+            }
+            createRecto(true);
+        }, false);
+        window.addEventListener('touchmove', function(e){
+            if (options.snapToGrid) {
+                m.x = snap(e.touches[0].clientX);
+                m.y = snap(e.touches[0].clientY);
+            }else{
+                m.x = e.touches[0].clientX;
+                m.y = e.touches[0].clientY;
+            }
+            moveRecto(true);
+        }, false);
+        window.addEventListener('touchend', deleteRecto, false);
     }
 }
 
-
+function resetContent(){
+    let liveRectos = document.getElementById('liveRectos');
+    let labels = document.getElementById('labels');
+    liveRectos.innerHTML = '';
+    labels.innerHTML = '';
+}
 
 
 

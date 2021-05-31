@@ -1,28 +1,14 @@
 /* FONTS */
 @font-face {
   font-family: "EBGaramond12";
-  src: url("font/EBGaramond12-Regular.ttf") format("truetype");
+  src: url("EBGaramond12-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "EBGaramond12";
-  src: url("font/EBGaramond12-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "EBGaramond08";
-  src: url("font/EBGaramond08-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "EBGaramond08";
-  src: url("font/EBGaramond08-Italic.ttf") format("truetype");
+  src: url("EBGaramond12-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
@@ -135,17 +121,8 @@ i{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 110;
+  z-index: 120;
   transition: margin-right .5s;
-}
-
-#background{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
 }
 
 .to_recto{
@@ -167,7 +144,7 @@ i{
 }
 
 #grid{
-  z-index: 90;
+  z-index: 10;
 }
 
 #permaRectos{
@@ -176,6 +153,10 @@ i{
 
 #liveRectos{
   z-index: 105;
+}
+
+#labels{
+  z-index: 110;
 }
 
 #permaRectos rect{

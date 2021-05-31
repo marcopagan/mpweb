@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto()" onmousedown="createRecto()" onmouseup="deleteRecto()">
+<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto(false)" onmousedown="createRecto(false)" onmouseup="deleteRecto()">
 
     <!-- OPTIONS -->
     <div id="options" style="width: 0px">
@@ -67,7 +67,7 @@
     <main id="foreground">
       <div id="box1" class="to_recto" min-x="12", min-y="4">
         <div class="recto_inside">
-          <p>Sorry, the page you are looking for does not exist.<br><a href="index.html">Click here to return to the homepage</a>.</p>
+          <p>Sorry, the page you are looking for does not exist.<br><a href="index.html">Click here to return to the homepage</a></p>
         </div>
       </div>
     </main>
@@ -76,10 +76,11 @@
     <svg id="grid" style="stroke-width:0; fill-opacity: 1"></svg>
     <svg id="liveRectos" style="stroke-width:3;"></svg>
     <svg id="permaRectos" style="stroke-width:3;"></svg>
+    <div id="labels"></div>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript">
         options.waterfall = false;
-        options.autoplay = false;
+        options.autoplay = true;
         options.showPermaRectos = true;
     </script>
 

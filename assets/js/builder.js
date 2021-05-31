@@ -36,14 +36,14 @@ class Recto {
 
     /* LABEL */
     createLabel(){
-        const foreground = document.getElementById('foreground');
+        const labels = document.getElementById('labels');
         this.label = document.createElement('span');
         this.label.classList.add('to_label');
         this.label.innerHTML = '0x0';
         this.label.style.top = (this.y1 - 20) + 'px';
         this.label.style.left = this.x1 + 'px';
         this.label.style.top = (this.y1 - 20) + 'px';
-        foreground.appendChild(this.label);
+        labels.appendChild(this.label);
     }
 
     moveLabel(){

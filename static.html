@@ -27,7 +27,6 @@
         left: calc(var(--gridstep)/2);
         width: 100vw;
       }
-
       #box1 div, #box2 div, #box3 div, #box4 div, #box5 div{
         left: calc(var(--gridstep)/2);
         width: 100vw;
@@ -37,11 +36,17 @@
       #box2{top: calc((var(--gridstep)*3) + (var(--gridstep)/2))}
       #box3{top: calc((var(--gridstep)*8) + (var(--gridstep)/2))}
       #box4{top: calc((var(--gridstep)*12) + (var(--gridstep)/2))}
-      #box5{bottom: calc(-100% + (var(--gridstep)/2))}
+      ::selection {
+        color: var(--invalid);
+      }
+
+      ::-moz-selection {
+        color: var(--invalid);
+      }
     </style>
 </head>
 
-<body>
+<body onresize="setOptionsPos()">
 
     <!-- OPTIONS -->
     <div id="options" style="width: 0px">
@@ -105,6 +110,33 @@
     <div id="background"></div>
     <script type="text/javascript" src="assets/js/script.js"></script>
 
+    <script type="text/javascript">
+      function switchNight(swichValue){
+        if (swichValue) {
+            options.night = !options.night;
+        }
+        let root = document.querySelector(':root');
+        if (options.night) {
+            root.style.setProperty('--back', '#000');
+            root.style.setProperty('--accent', '#FFF');
+            options.validColor = [0, 255, 255];
+            options.invalidColor = [255, 100, 50];
+        }else{
+            root.style.setProperty('--back', '#FFF');
+            root.style.setProperty('--accent', '#000');
+            options.validColor = [0, 120, 255];
+            options.invalidColor = [255, 100, 0];
+        }
+        root.style.setProperty('--valid', 'rgb('+options.validColor[0]+', '+options.validColor[1]+', '+options.validColor[2]+')');
+        root.style.setProperty('--invalid', 'rgb('+options.invalidColor[0]+', '+options.invalidColor[1]+', '+options.invalidColor[2]+')');
+
+      }
+      function setOptionsPos(){
+        //document.getElementById('box5').style.top = (window.innerHeight - (options.step/2)*3)+'px';
+        document.getElementById('box5').style.bottom = (-window.innerHeight + options.step/2) +'px';
+      }
+      setOptionsPos();
+    </script>
 
 
 
