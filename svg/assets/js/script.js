@@ -21,7 +21,7 @@ let options = {
     invalidColor : null,
     permaColor: [0, 0, 255],
     fillOpacity : .2,
-    waterfall: true,
+    waterfall: false,
     autoplay: true
 }
 
