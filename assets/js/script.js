@@ -278,7 +278,7 @@ function loadOptions(){
 
     if (options.autoplay) {
         setInterval(() => {
-            if (options.userPause) {
+            if (options.userPause && !mouseIsPressed) {
                 autoPlay(false, 'box'+count, false);
             }
         }, options.autoPlaydelay);
@@ -301,9 +301,15 @@ function switchNight(swichValue){
         //options.validColor = [50, 0, 255];
         //options.invalidColor = [255, 200, 50];
         //options.permaColor = [120, 0, 255];
+
+        //options.validColor = [0, 255, 255];
+        //options.invalidColor = [255, 100, 50];
+        //options.permaColor = [0, 0, 255];
+
         options.validColor = [0, 255, 255];
         options.invalidColor = [255, 100, 50];
         options.permaColor = [0, 0, 255];
+
         options.gridColor = [170, 170, 170];
         options.fillOpacity = .15;
 
@@ -318,6 +324,7 @@ function switchNight(swichValue){
     }
     for(let circle of document.getElementById('grid').children){
         circle.setAttributeNS(null, 'fill', 'rgb('+options.gridColor[0]+', '+options.gridColor[1]+', '+options.gridColor[2]+')');
+        circle.setAttributeNS(null, 'fill-opacity', options.fillOpacity*5);
     }
     for(let perma of document.getElementById('permaRectos').children){
         perma.setAttributeNS(null, 'fill', 'rgb('+options.permaColor[0]+', '+options.permaColor[1]+', '+options.permaColor[2]+')');
@@ -434,6 +441,7 @@ function drawGrid(){
                 }else{
                     circle.setAttributeNS(null, 'fill', 'var(--valid');
                 }
+                circle.setAttributeNS(null, 'fill-opacity', options.fillOpacity*5);
                 wrapper.appendChild(circle);
             }
         }
