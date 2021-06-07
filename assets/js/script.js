@@ -306,7 +306,7 @@ function switchNight(swichValue){
         //options.invalidColor = [255, 100, 50];
         //options.permaColor = [0, 0, 255];
 
-        options.validColor = [0, 255, 255];
+        options.validColor = [0, 204, 187];
         options.invalidColor = [255, 100, 50];
         options.permaColor = [0, 0, 255];
 

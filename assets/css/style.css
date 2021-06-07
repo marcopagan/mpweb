@@ -21,7 +21,7 @@
 :root {
   --accent: #FFF;
   --back: #000;
-  --valid: rgb(0, 255, 255);
+  --valid: #00CCBB;
   --invalid: rgb(255, 100, 50);
   --textSmall: 15px;
   --textMedium: 20px;
@@ -48,6 +48,7 @@ body{
   background: var(--back);
   color: var(--accent);
   height:100%;
+  text-rendering: optimizeSpeed;
 }
 
 input:focus,
