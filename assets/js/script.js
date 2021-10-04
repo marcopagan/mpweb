@@ -208,8 +208,8 @@ function initializeDivPosition(){
 
             recto.loadDivLimit('box'+count);
             if (count == 2) {
-                recto.auto.stepx = 12+1;
-                recto.auto.stepy = 3+1;
+                recto.auto.stepx = 13+1;
+                recto.auto.stepy = 4+1;
             }else{
                 recto.auto.stepx = int(recto.target.minx);
                 recto.auto.stepy = int(recto.target.miny);
