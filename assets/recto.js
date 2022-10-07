@@ -1,3 +1,5 @@
+// Recto Library, Marco Pagan © 2021
+
 class Recto {
     constructor(automatic) {
         this.x1;
@@ -32,8 +34,6 @@ class Recto {
         };
     }
 
-
-
     /* LABEL */
     createLabel(){
         const labels = document.getElementById('labels');
@@ -61,10 +61,6 @@ class Recto {
         this.label.remove();
     }
 
-
-
-
-
     /* SVG */
     createSvg(x, y, domID){
         this.x1 = x;
@@ -72,8 +68,8 @@ class Recto {
         this.rect = document.createElementNS(svgns, 'rect');
         this.rect.setAttributeNS(null, 'x', x);
         this.rect.setAttributeNS(null, 'y', y);
-        //this.rect.setAttributeNS(null, 'rx', '5');
-        //this.rect.setAttributeNS(null, 'ry', '5');
+        this.rect.setAttributeNS(null, 'rx', '5');
+        this.rect.setAttributeNS(null, 'ry', '5');
         this.rect.setAttributeNS(null, 'fill-opacity', options.fillOpacity);
         this.rect.setAttributeNS(null, 'stroke-opacity', '1');
         document.getElementById(domID).appendChild(this.rect);

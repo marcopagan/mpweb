@@ -1,18 +1,15 @@
 // CONSTANTS //
 const boxes = document.getElementsByClassName('to_recto').length;
 const svgns = "http://www.w3.org/2000/svg";
-/*
-->screencapture=478 X 850
-*/
 
 
 // VARIABLES //
 let options = {
     step: 24,
     userPause : false,
-    showGrid : false,
+    showGrid : true,
     showLabel : true,
-    showPermaRectos: false,
+    showPermaRectos: true,
     snapToGrid : true,
     night : true,
     backgroundColor : getComputedStyle(document.body).getPropertyValue('--back'),
@@ -114,6 +111,8 @@ function refreshPermaRectos(){
             svgRect.setAttributeNS(null, 'height', precto.pHgt);
             svgRect.setAttributeNS(null, 'fill', color);
             svgRect.setAttributeNS(null, 'stroke', color);
+            svgRect.setAttributeNS(null, 'rx', '5');
+            svgRect.setAttributeNS(null, 'ry', '5');
             if (options.showPermaRectos) {
                 svgRect.setAttributeNS(null, 'fill-opacity', options.fillOpacity);
                 svgRect.setAttributeNS(null, 'stroke-opacity', '1');
@@ -124,6 +123,7 @@ function refreshPermaRectos(){
                 }, 50);
                 svgRect.setAttributeNS(null, 'fill-opacity', options.fillOpacity);
                 svgRect.setAttributeNS(null, 'stroke-opacity', '1');
+
             }
             document.getElementById('permaRectos').appendChild(svgRect);
             precto.show = true;
@@ -207,13 +207,13 @@ function initializeDivPosition(){
 
 
             recto.loadDivLimit('box'+count);
-            if (count == 2) {
-                recto.auto.stepx = 13+1;
-                recto.auto.stepy = 4+1;
-            }else{
+            //if (count == 2) {
+            //    recto.auto.stepx = 13+1;
+            //    recto.auto.stepy = 4+1;
+            //}else{
                 recto.auto.stepx = int(recto.target.minx);
                 recto.auto.stepy = int(recto.target.miny);
-            }
+            //}
             
             recto.setAutoBoundry();
             recto.checkIntersections(permaRectos);
@@ -253,10 +253,11 @@ function loadOptions(){
     document.getElementById('op_snapToGrid').checked = options.snapToGrid;
     document.getElementById('op_showGrid').checked = options.showGrid;
     document.getElementById('op_showLabel').checked = options.showLabel;
+    document.getElementById('op_showPermaRectos').checked = options.showPermaRectos;
     setMobile();
     let root = document.querySelector(':root');
-    root.style.setProperty('--gridstep', options.step+'px');
-    root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+    root.style.setProperty('--gs', options.step+'px');
+    root.style.setProperty('--m', (options.step/1.2)+'px');
     document.body.onkeydown = keyPressed;
     drawGrid();
     switchNight(false);
@@ -296,19 +297,15 @@ function switchNight(swichValue){
     }
     let root = document.querySelector(':root');
     if (options.night) {
-        root.style.setProperty('--back', '#000');
-        root.style.setProperty('--accent', '#FFF');
+        root.style.setProperty('--back', '#111');
+        root.style.setProperty('--accent', '#eee');
         //options.validColor = [50, 0, 255];
         //options.invalidColor = [255, 200, 50];
         //options.permaColor = [120, 0, 255];
 
-        //options.validColor = [0, 255, 255];
-        //options.invalidColor = [255, 100, 50];
-        //options.permaColor = [0, 0, 255];
-
-        options.validColor = [0, 204, 187];
-        options.invalidColor = [255, 100, 50];
-        options.permaColor = [0, 0, 255];
+        options.validColor = [0, 100, 255];
+        options.invalidColor = [255, 30, 0];
+        options.permaColor = [150, 0, 255];
 
         options.gridColor = [170, 170, 170];
         options.fillOpacity = .15;
@@ -317,7 +314,7 @@ function switchNight(swichValue){
         root.style.setProperty('--back', '#FFF');
         root.style.setProperty('--accent', '#000');
         options.validColor = [0, 50, 255];
-        options.invalidColor = [255, 100, 0];
+        options.invalidColor = [255, 30, 0];
         options.permaColor = [255, 0, 255];
         options.gridColor = [options.validColor[0], options.validColor[1], options.validColor[2]];
         options.fillOpacity = .08;
@@ -500,12 +497,12 @@ function setMobile(){
     else{options.isMobile = false}
     if (options.isMobile) {
         options.step = 21;
-        root.style.setProperty('--gridstep', options.step+'px');
-        root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+        root.style.setProperty('--gs', options.step+'px');
+        root.style.setProperty('--m', (options.step/1.2)+'px');
     }else{
         options.step = 24;
-        root.style.setProperty('--gridstep', options.step+'px');
-        root.style.setProperty('--textMedium', (options.step/1.2)+'px');
+        root.style.setProperty('--gs', options.step+'px');
+        root.style.setProperty('--m', (options.step/1.2)+'px');
         //Touch
         window.addEventListener('touchstart', function(e){
             if (options.snapToGrid) {

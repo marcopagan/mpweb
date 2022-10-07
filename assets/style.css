@@ -1,31 +1,12 @@
-/* FONTS */
-@font-face {
-  font-family: "EBGaramond12";
-  src: url("EBGaramond12-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "EBGaramond12";
-  src: url("EBGaramond12-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-
-
-
-
 /* GENERAL */
 :root {
-  --accent: #FFF;
-  --back: #000;
-  --valid: #00CCBB;
-  --invalid: rgb(255, 100, 50);
-  --textSmall: 15px;
-  --textMedium: 20px;
-  --gridstep: 24px;
+  --accent: #eee;
+  --back: #111;
+  --valid: #0066ff;
+  --invalid: #ff1e00;
+  --s: 15px;
+  --m: 20px;
+  --gs: 24px;
 }
 
 html{
@@ -42,8 +23,8 @@ html, body {
 }
 
 body{
-  font-family: EBGaramond12, Garamond, serif;
-  font-size: var(--textMedium);
+  font-family: Times New Roman, serif;
+  font-size: var(--m);
   line-height: 1.2;
   background: var(--back);
   color: var(--accent);
@@ -76,11 +57,18 @@ svg rect{
 }
 
 h1{
-  font-size: var(--textMedium);
+  font-size: calc(var(--m)*3);
+  font-family: Arial, sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  font-weight: normal;
+  letter-spacing: -2.5px;
+
+
 }
 
 h3, p, a, li{
-  font-size: var(--textMedium);
+  font-size: var(--m);
 }
 
 a{
@@ -114,9 +102,9 @@ i{
 }
 
 .page_margin{
-  margin-left: var(--gridstep);
-  margin-right: var(--gridstep);
-  margin-top: var(--gridstep);
+  margin-left: var(--gs);
+  margin-right: var(--gs);
+  margin-top: var(--gs);
 }
 
 #foreground{
@@ -134,7 +122,9 @@ i{
 
 .to_label{
   font-family: monospace;
-  font-size: var(--textSmall);
+  -webkit-font-smoothing: none;
+  text-rendering: optimizeSpeed;
+  font-size: var(--s);
   width: 30px;
   height: 15px;
   position: absolute;
@@ -188,9 +178,11 @@ i{
 #options div {
   background-color: var(--back);
   width: 100vw;
-  padding: 8px 8px 8px var(--textMedium);
+  padding: 8px 8px 8px var(--m);
   font-family: monospace;
-  font-size: var(--textSmall);
+  -webkit-font-smoothing: none;
+  text-rendering: optimizeSpeed;
+  font-size: var(--s);
   color: var(--accent);
   display: block;
   transition: color 0.3s;
@@ -235,9 +227,9 @@ i{
 @media (min-width: 1px) {
   /*GENERAL*/
   :root {
-    --textSmall: 15px;
-    --textMedium: 17.5px;
-    --gridstep: 21px;
+    --s: 15px;
+    --m: 17.5px;
+    --gs: 21px;
   }
 
 }
@@ -249,38 +241,10 @@ i{
 @media (min-width: 576px) {
   /*GENERAL*/
   :root {
-    --textSmall: 15px;
-    --textMedium: 20px;
-    --gridstep: 24px;
+    --s: 15px;
+    --m: 20px;
+    --gs: 24px;
   }
-
-}
-
-
-
-
-
-@media (min-width: 768px) {
-  /*GENERAL*/
-
-}
-
-
-
-
-
-@media (min-width: 992px) {
-  /*GENERAL*/
-
-}
-
-
-
-
-
-@media (min-width: 1200px) {
-  /*GENERAL*/
-
 
 }
 

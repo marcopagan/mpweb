@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 
     <title>Marco Pagan</title>
-    <meta name="description" content="Graphic design / coding">
-    <meta name="keywords" content="Marco Pagan,design,graphic design,coding, creative coding">
+    <meta name="description" content="information design / coding / graphic design">
+    <meta name="keywords" content="Marco Pagan,design,information design,coding,graphic design,creative coding">
     <meta name="author" content="Marco Pagan">
     <link rel="canonical" href="https://marcopagan.com"/>
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Marco Pagan">
-    <meta property="og:description" content="Graphic design / coding">
+    <meta property="og:description" content="information design / coding / graphic design">
     <meta property="og:url" content="https://marcopagan.com/">
     <meta property="og:site_name" content="Marco Pagan">
     <meta property="og:image" content="assets/pres.jpg">
@@ -24,9 +24,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/icon_16x16.png"/>
     <link rel="mask-icon" href="assets/icon/icon.svg" color="#000000"/>
     <link rel="manifest" href="site.webmanifest"/>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/js/builder.js"></script>
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript" src="assets/recto.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150977790-1"></script>
     <script>
@@ -36,25 +36,22 @@
       gtag('config', 'UA-150977790-1');
     </script>
     <style type="text/css">
-      #box1, #box2, #box3, #box4, #box5{
-        left: calc(var(--gridstep)/2);
+      #box1, #box2, #box3, #box4{
+        left: calc(var(--gs)/2);
         width: 100vw;
       }
-      #box1 div, #box2 div, #box3 div, #box4 div, #box5 div{
-        left: calc(var(--gridstep)/2);
-        width: 100vw;
-      }
-      #box2 div{width: 300px}
-      #box1{top: calc(var(--gridstep)/2)}
-      #box2{top: calc((var(--gridstep)*3) + (var(--gridstep)/2))}
-      #box3{top: calc((var(--gridstep)*9) + (var(--gridstep)/2))}
-      #box4{top: calc((var(--gridstep)*13) + (var(--gridstep)/2))}
+      .recto_inside{border: 3px solid #9500ff; border-radius: 5px; background-color: rgba(150, 0, 255, .15)}
+      #box1{top: calc(var(--gs)/2)}
+      #box2{top: calc((var(--gs)*3) + (var(--gs)/2))}
+      #box3{top: calc((var(--gs)*8) + (var(--gs)/2))}
       ::selection {
-        color: var(--invalid);
+        color: #111;
+        background-color: #eee;
       }
 
       ::-moz-selection {
-        color: var(--invalid);
+        color: #111;
+        background-color: #eee;
       }
     </style>
 </head>
@@ -63,28 +60,26 @@
 
     <!-- OPTIONS -->
     <div id="options" style="width: 0px">
-      <!--<a href="javascript:void(0)" class="closebtn" onclick="closeOptions()">x</a>-->
       <div class="op_top op_btm">
         <label for="myCheck">Night mode:</label>
         <input type="checkbox" id="op_night" onclick="optionsCheckbox('night')" checked>
       </div>
       <br><br>
-      <div class="op_top op_btm"><a href="index.html" style="font-size: var(--textSmall)">Dynamic version</a></div>
+      <div class="op_top op_btm"><a href="index.html" style="font-size: var(--s)">Dynamic version</a></div>
     </div>
-
 
 
     <!-- CONTENT -->
     <main id="foreground">
-      <div id="box1" class="to_recto" min-x="8", min-y="2">
+      <div id="box1" class="to_recto">
         <div class="recto_inside">
-          <p>Marco Pagan<br><i>Graphic design / coding</i></p>
+          <p>Marco Pagan<br><i>Information design / coding</i></p>
         </div>
       </div>
 
 
 
-      <div id="box2" class="to_recto" min-x="10", min-y="3">
+      <div id="box2" class="to_recto">
         <div class="recto_inside">
           <p>I studied graphic design and visual communication <a href="https://isiaurbino.net">@ISIA U</a> (IT) and<br>now information design <a href="https://www.designacademy.nl/">@DAE</a> (NL).<br>I'm interested in learning, displaying informations and parametric design.<br><br></p>
         </div>
@@ -92,7 +87,7 @@
 
 
 
-      <div id="box3" class="to_recto" min-x="4", min-y="3">
+      <div id="box3" class="to_recto">
         <div class="recto_inside">
           <h3>Contacts</h3>
           <p><a href="mailto:marco.pagan.one@gmail.com">Mail</a></p>
@@ -101,23 +96,17 @@
       </div>
 
 
-      <div id="box4" class="to_recto" min-x="5", min-y="1">
-        <div class="recto_inside">
-          <p><a href="policy.html">Privacy policy</a></p>
-        </div>
-      </div>
 
-
-
-      <div id="box5" class="to_recto" min-x="3", min-y="1" option="1">
+      <div id="box4" class="to_recto">
         <div class="recto_inside">
           <p><a href="javascript:void(0)" onclick="triggerOptions()">Options</a></p>
         </div>
       </div>
     </main>
+    <h1 style="position: absolute;bottom: 0;right: 0">Marco Pagan <i>Information design / coding</i></h1>
 
     <div id="background"></div>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/script.js"></script>
 
     <script type="text/javascript">
       function switchNight(swichValue){
@@ -126,25 +115,23 @@
         }
         let root = document.querySelector(':root');
         if (options.night) {
-            root.style.setProperty('--back', '#000');
-            root.style.setProperty('--accent', '#FFF');
-            options.validColor = [0, 255, 255];
-            options.invalidColor = [255, 100, 50];
+            root.style.setProperty('--back', '#111');
+            root.style.setProperty('--accent', '#eee');
+            options.validColor = [0, 100, 255];
+            options.invalidColor = [255, 30, 0];
+            options.permaColor = [150, 0, 255];
         }else{
             root.style.setProperty('--back', '#FFF');
             root.style.setProperty('--accent', '#000');
-            options.validColor = [0, 120, 255];
-            options.invalidColor = [255, 100, 0];
+            options.validColor = [0, 50, 255];
+            options.invalidColor = [255, 30, 0];
+            options.permaColor = [255, 0, 255];
         }
         root.style.setProperty('--valid', 'rgb('+options.validColor[0]+', '+options.validColor[1]+', '+options.validColor[2]+')');
         root.style.setProperty('--invalid', 'rgb('+options.invalidColor[0]+', '+options.invalidColor[1]+', '+options.invalidColor[2]+')');
 
       }
-      function setOptionsPos(){
-        //document.getElementById('box5').style.top = (window.innerHeight - (options.step/2)*3)+'px';
-        document.getElementById('box5').style.bottom = (-window.innerHeight + options.step/2) +'px';
-      }
-      setOptionsPos();
+      document.getElementById('box4').style.bottom = (-window.innerHeight + options.step/2) +'px';
     </script>
 
 
