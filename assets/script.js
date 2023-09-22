@@ -263,7 +263,7 @@ function loadOptions(){
     switchNight(false);
 
     //Intro
-    let amount = int((window.innerWidth + window.innerHeight /2)*0.03);
+    let amount = int((window.innerWidth + window.innerHeight /2)*0.02);
     if (options.waterfall) {
         for(let i = 0; i < amount; i++){
             setTimeout(() => {
