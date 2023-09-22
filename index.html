@@ -67,7 +67,7 @@
 
     <!-- CONTENT -->
     <main id="foreground">
-      <div id="box1" class="to_recto" min-x="10", min-y="4">
+      <div id="box1" class="to_recto" min-x="10", min-y="3">
         <div class="recto_inside">
           <p>Marco Pagan<br><i>Information design/coding</i></p>
         </div>
@@ -81,7 +81,7 @@
         </div>
       </div>
 
-      <div id="box3" class="to_recto" min-x="12", min-y="7">
+      <div id="box3" class="to_recto" min-x="12", min-y="8">
         <div class="recto_inside">
           <p>BA Graphic Design at <a href="https://isiaurbino.net" target="_blank">ISIA U</a> (IT).<br>
           MA Information Design at <a href="https://www.designacademy.nl/" target="_blank">DAE</a> (NL).<br>
@@ -122,10 +122,9 @@
     <script type="text/javascript" src="assets/script.js"></script>
     <script type="text/javascript">
       setTimeout(() => {
-        options.showGrid = !options.showGrid;
-        document.getElementById("op_showGrid").checked = !document.getElementById("op_showGrid").checked;
-        drawGrid();
-      }, 4500);
+        document.getElementById("op_showPermaRectos").checked = !document.getElementById("op_showPermaRectos").checked;
+        switchPermaRectos();
+      }, 6000);
     </script>
 
 

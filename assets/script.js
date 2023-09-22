@@ -9,7 +9,7 @@ let options = {
     userPause : false,
     showGrid : false,
     showLabel : true,
-    showPermaRectos: true,
+    showPermaRectos: false,
     snapToGrid : true,
     night : true,
     backgroundColor : getComputedStyle(document.body).getPropertyValue('--back'),
