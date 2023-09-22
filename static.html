@@ -23,27 +23,23 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/icon_32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/icon_16x16.png"/>
     <link rel="mask-icon" href="assets/icon/icon.svg" color="#000000"/>
-    <link rel="manifest" href="site.webmanifest"/>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script type="text/javascript" src="assets/recto.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150977790-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-150977790-1');
-    </script>
     <style type="text/css">
-      #box1, #box2, #box3, #box4{
-        left: calc(var(--gs)/2);
-        width: 100vw;
+      main{height: 100vh}
+      #box1, #box2, #box3, #box4, #box5{
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: calc(var(--gs)/2);
       }
-      .recto_inside{border: 3px solid #9500ff; border-radius: 5px; background-color: rgba(150, 0, 255, .15)}
-      #box1{top: calc(var(--gs)/2)}
-      #box2{top: calc((var(--gs)*3) + (var(--gs)/2))}
-      #box3{top: calc((var(--gs)*8) + (var(--gs)/2))}
+      #box6{
+        position: absolute;
+        left: 0;
+        margin: calc(var(--gs)/2);
+        bottom: 0;
+      }
+      .recto_inside{border: 2.5px solid #00c8ff; border-radius: 5px; background-color: rgba(0, 200, 255, .1); padding: .05em}
       ::selection {
         color: #111;
         background-color: #eee;
@@ -56,7 +52,7 @@
     </style>
 </head>
 
-<body onresize="setOptionsPos()">
+<body>
 
     <!-- OPTIONS -->
     <div id="options" style="width: 0px">
@@ -73,65 +69,65 @@
     <main id="foreground">
       <div id="box1" class="to_recto">
         <div class="recto_inside">
-          <p>Marco Pagan<br><i>Information design / coding</i></p>
+          <p>Marco Pagan<br><i>Information design/coding</i></p>
         </div>
       </div>
 
 
-
-      <div id="box2" class="to_recto">
+      <div id="box2" class="to_recto" style="max-width: 600px;">
         <div class="recto_inside">
-          <p>I studied graphic design and visual communication <a href="https://isiaurbino.net">@ISIA U</a> (IT) and<br>now information design <a href="https://www.designacademy.nl/">@DAE</a> (NL).<br>I'm interested in learning, displaying informations and parametric design.<br><br></p>
+          <p>I'm interested in learning, displaying informations and parametric design. My practice intersect coding and graphic design to produce both printed and digital content.</p>
         </div>
       </div>
-
-
 
       <div id="box3" class="to_recto">
         <div class="recto_inside">
+          <p>BA Graphic Design at <a href="https://isiaurbino.net" target="_blank">ISIA U</a> (IT).<br>
+          MA Information Design at <a href="https://www.designacademy.nl/" target="_blank">DAE</a> (NL).<br>
+          You can explore ma MA thesis from here: <a href="http://avoidingthebrick.net">avoidingthebrick.net </a><br>
+          Currently teaching at <a href="https://www.hku.nl/" target="_blank">HKU</a> (NL).</p>
+        </div>
+      </div>
+
+      <div id="box4" class="to_recto">
+        <div class="recto_inside">
+          <p><a href="archive">Projects</a></p>
+        </div>
+      </div>
+
+
+      <div id="box5" class="to_recto">
+        <div class="recto_inside">
           <h3>Contacts</h3>
           <p><a href="mailto:marco.pagan.one@gmail.com">Mail</a></p>
-          <p><a href="http://www.instagram.com/marcopagan">Instagram</a></p>
+          <p><a href="http://www.instagram.com/marcopagan" target="_blank">Instagram</a></p>
         </div>
       </div>
 
 
 
-      <div id="box4" class="to_recto">
+      <div id="box6" class="to_recto">
         <div class="recto_inside">
           <p><a href="javascript:void(0)" onclick="triggerOptions()">Options</a></p>
         </div>
       </div>
     </main>
-    <h1 style="position: absolute;bottom: 0;right: 0">Marco Pagan <i>Information design / coding</i></h1>
 
     <div id="background"></div>
     <script type="text/javascript" src="assets/script.js"></script>
 
     <script type="text/javascript">
       function switchNight(swichValue){
-        if (swichValue) {
-            options.night = !options.night;
-        }
+        if (swichValue) {options.night = !options.night}
         let root = document.querySelector(':root');
         if (options.night) {
             root.style.setProperty('--back', '#111');
             root.style.setProperty('--accent', '#eee');
-            options.validColor = [0, 100, 255];
-            options.invalidColor = [255, 30, 0];
-            options.permaColor = [150, 0, 255];
         }else{
             root.style.setProperty('--back', '#FFF');
             root.style.setProperty('--accent', '#000');
-            options.validColor = [0, 50, 255];
-            options.invalidColor = [255, 30, 0];
-            options.permaColor = [255, 0, 255];
         }
-        root.style.setProperty('--valid', 'rgb('+options.validColor[0]+', '+options.validColor[1]+', '+options.validColor[2]+')');
-        root.style.setProperty('--invalid', 'rgb('+options.invalidColor[0]+', '+options.invalidColor[1]+', '+options.invalidColor[2]+')');
-
       }
-      document.getElementById('box4').style.bottom = (-window.innerHeight + options.step/2) +'px';
     </script>
 
 

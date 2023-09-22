@@ -7,7 +7,7 @@ const svgns = "http://www.w3.org/2000/svg";
 let options = {
     step: 24,
     userPause : false,
-    showGrid : true,
+    showGrid : false,
     showLabel : true,
     showPermaRectos: true,
     snapToGrid : true,
@@ -305,19 +305,19 @@ function switchNight(swichValue){
 
         options.validColor = [0, 100, 255];
         options.invalidColor = [255, 30, 0];
-        options.permaColor = [150, 0, 255];
+        options.permaColor = [0, 200, 255];
 
         options.gridColor = [170, 170, 170];
-        options.fillOpacity = .15;
+        options.fillOpacity = .1;
 
     }else{
         root.style.setProperty('--back', '#FFF');
         root.style.setProperty('--accent', '#000');
         options.validColor = [0, 50, 255];
         options.invalidColor = [255, 30, 0];
-        options.permaColor = [255, 0, 255];
+        options.permaColor = [0, 200, 255];
         options.gridColor = [options.validColor[0], options.validColor[1], options.validColor[2]];
-        options.fillOpacity = .08;
+        options.fillOpacity = .05;
     }
     for(let circle of document.getElementById('grid').children){
         circle.setAttributeNS(null, 'fill', 'rgb('+options.gridColor[0]+', '+options.gridColor[1]+', '+options.gridColor[2]+')');

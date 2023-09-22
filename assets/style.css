@@ -2,7 +2,7 @@
 :root {
   --accent: #eee;
   --back: #111;
-  --valid: #0066ff;
+  --valid: #00c8ff;
   --invalid: #ff1e00;
   --s: 15px;
   --m: 20px;
@@ -73,7 +73,7 @@ h3, p, a, li{
 
 a{
   transition: color .3s;
-  color: var(--valid);
+  color: #00c8ff;
   text-decoration: none;
 }
 
