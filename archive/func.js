@@ -44,9 +44,11 @@ function createList(projs, alphabetical, tags, query){
             if (getParameterByName("p").includes(projs[i].name)){
                 openProject(projs[i]);
                 a.classList.add("selected");
-            }
-        }
+            }else{homePG = true}
+        }else{homePG = true}
+
     }
+    if (homePG) {runSVG()}
 }
 
 function openProject(proj) {
@@ -81,12 +83,36 @@ function triggerOptions(){
 function resizeListHeight(){
     let hgt = window.innerHeight - (header.offsetHeight + filters.offsetHeight + links.offsetHeight) - (13 + 22) - 70;
     projsWrapper.style.maxHeight = hgt + "px";
-    console.log(window.innerHeight, hgt);
-    console.log(projsWrapper.style.maxHeight);
+    feedSVG.style.width = feed.offsetWidth - 15;
+    feedSVG.style.height = feed.offsetHeight - 15;
 }
 
 
-
+function runSVG(){
+    const svgns = "http://www.w3.org/2000/svg";
+    setInterval(() => {
+        let rect = document.createElementNS(svgns, 'rect');
+        rect.setAttributeNS(null, 'x', Math.floor((feed.offsetWidth - 15) * Math.random()));
+        rect.setAttributeNS(null, 'y', "-100");
+        rect.setAttributeNS(null, 'width', "100");
+        rect.setAttributeNS(null, 'height', "100");
+        rect.setAttributeNS(null, 'rx', '5');
+        rect.setAttributeNS(null, 'ry', '5');
+        rect.setAttributeNS(null, 'stroke', "var(--pback)");
+        rect.setAttributeNS(null, 'fill', "var(--back)");
+        rect.setAttributeNS(null, 'stroke-width', '10');
+        feedSVG.appendChild(rect);
+        setInterval(() => {
+            y = parseInt(rect.getAttribute("y")) + 5;
+            r = parseInt(rect.getAttribute("y"));
+            rect.setAttributeNS(null, 'y', y);
+            rect.setAttributeNS(null, 'transform', "rotate("+y+")");
+            if (rect.getAttribute("y") >= feed.offsetHeight - 15) {
+                rect.remove();
+            }
+          }, 1000/40);
+    }, 3000);
+}
 
 
 

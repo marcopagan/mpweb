@@ -1,24 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-/* FONTS */
-@font-face {
-  font-family: "Unica77";
-  src: url('fonts/Unica77LL-Medium.eot');
-  src: url('fonts/Unica77LL-Medium.eot') format('embedded-opentype'),
-       url('fonts/Unica77LL-Medium.woff2') format('woff2'),
-       url('fonts/Unica77LL-Medium.woff') format('woff'),
-       url('fonts/Unica77LL-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "Unica77";
-  src: url('fonts/Unica77LL-MediumItalic.eot');
-  src: url('fonts/Unica77LL-MediumItalic.eot') format('embedded-opentype'),
-       url('fonts/Unica77LL-MediumItalic.woff2') format('woff2'),
-       url('fonts/Unica77LL-MediumItalic.woff') format('woff'),
-       url('fonts/Unica77LL-MediumItalic.ttf') format('truetype');
-  font-style: italic;
-}
-
 /* GENERAL */
 :root {
   --round: 6px;
@@ -48,9 +27,9 @@ html, body {
 }
 
 body{
-  /*font-family: Unica77, Helvetica, serif;*/
   font-family: Arial, Helvetica, serif;
   font-size: var(--m);
+  -webkit-text-stroke: .01em var(--accent);
   line-height: 1.1;
   letter-spacing: -.01em;
   text-rendering: optimizeSpeed;
@@ -87,6 +66,9 @@ section div, #header{
   overflow: hidden;
 }
 #header{display: flex}
+#header_icon svg{width: 12px; height: 12px;}
+#feed svg{width: 100%; height: 100%; position: absolute;}
+rect{transform-box: fill-box; transform-origin: center}
 
 
 h1{
@@ -106,7 +88,6 @@ select, input{
   color: var(--accent);
 }
 
-svg{width: 12px; height: 12px;}
 
 select:focus, input:focus{outline: 1px solid var(--accent); border-radius: var(--round)}
 img{width: 100%}
@@ -157,6 +138,10 @@ article{
   .img_m{width: 100%}
   .img_s{width: 100%}
   .img_rgt{padding-right: 0}
+}
+#feed_bckg{
+  width: 100%;
+  height: 100%;
 }
 
 
