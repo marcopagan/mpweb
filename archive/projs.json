@@ -1,6 +1,6 @@
 [
 
-{
+/*{
     "name" : "divergences",
     "title": "Divergences",
     "year" : "2023",
@@ -13,44 +13,6 @@
     "title": "Avoiding the Brick",
     "year" : "2023",
     "tags": ["website", "research"],
-    "client" : null,
-    "collab": null,
-    "imgs" : [
-        {"name": "nome1.jpg","size": "l"},
-        {"name": "nome2.jpg","size": "m"},
-        {"name": "nome3.jpg","size": "m"}
-    ]
-},
-
-{
-    "name" : "desertodeitartari",
-    "title": "Il Deserto dei Tartari",
-    "year" : "2021",
-    "tags": ["editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ricedi",
-    "title": "Ricerca / editoriale",
-    "year" : "2020",
-    "tags": ["research", "editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "mano",
-    "title": "Manoscritto",
-    "year" : "2019",
-    "tags": ["editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ws",
-    "title": "Workshop",
-    "year" : "2018",
-    "tags": ["research"],
     "cover" : "nome1.jpg"
 },
 
@@ -60,76 +22,7 @@
     "year" : "2021",
     "tags": ["editorial"],
     "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ricedi",
-    "title": "Ricerca / editoriale",
-    "year" : "2020",
-    "tags": ["research", "editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "mano",
-    "title": "Manoscritto",
-    "year" : "2019",
-    "tags": ["editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ws",
-    "title": "Workshop",
-    "year" : "2018",
-    "tags": ["research"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "desertodeitartari",
-    "title": "Il Deserto dei Tartari",
-    "year" : "2021",
-    "tags": ["editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ricedi",
-    "title": "Ricerca / editoriale",
-    "year" : "2020",
-    "tags": ["research", "editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "mano",
-    "title": "Manoscritto",
-    "year" : "2019",
-    "tags": ["editorial"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "ws",
-    "title": "Workshop",
-    "year" : "2018",
-    "tags": ["research"],
-    "cover" : "nome1.jpg"
-},
-
-{
-    "name" : "zzzz",
-    "title": "Zattera",
-    "year" : "2016",
-    "tags": ["identity", "editorial"],
-    "cover" : "nome1.jpg"
-}
-
-
-
-
-
+}*/
 
 
 
