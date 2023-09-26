@@ -53,10 +53,18 @@ iframe{
   animation: fade 1s ease-out 0s 1 normal;
 }
 
+table{
+  width: 100%;
+}
 
-td, th{font-size: var(--s); text-align: left;}
+td, th{
+  font-size: var(--m);
+  text-align: left;
+  padding-right: 3em;
 
-tr{background-color: red; padding: 0 .1em}
+}
+
+tr{width: 100%}
 
 section div, #header{
   background-color: var(--back);
