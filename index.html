@@ -1,133 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+		
+		<title>Marco Pagan</title>
+		
+		<link href="./app/immutable/assets/0.pVMCcMwK.css" rel="stylesheet">
+		<link href="./app/immutable/assets/2.BKEKVvsJ.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/entry/start.0cUfTaqB.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/6vRkop96.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/BFPP-6fK.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/7YcfCxfa.js">
+		<link rel="modulepreload" href="./app/immutable/entry/app.CscDXA4v.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/C6ufSfvN.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Drtdu_nf.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Dk0dYWdK.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/0.Rd12ZvGH.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/BTAYD7-3.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/2.dmTV51kp.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/BBvYfSj4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/D6XMVIW4.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><!----><!--[!--><!--]--><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1u6fcn0 = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
 
-    <title>Marco Pagan</title>
-    <meta name="description" content="Graphic design / coding">
-    <meta name="keywords" content="Marco Pagan,design,graphic design,coding, creative coding">
-    <meta name="author" content="Marco Pagan">
-    <link rel="canonical" href="https://marcopagan.com"/>
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Marco Pagan">
-    <meta property="og:description" content="Graphic design / coding">
-    <meta property="og:url" content="https://marcopagan.com/">
-    <meta property="og:site_name" content="Marco Pagan">
-    <meta property="og:image" content="assets/pres.jpg">
-    <meta name="apple-mobile-web-app-title" content="Marco Pagan"/>
-    <meta name="application-name" content="Marco Pagan"/>
-    <meta name="msapplication-TileColor" content="#000000"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon/icon_180x180.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/icon_32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/icon_16x16.png"/>
-    <link rel="mask-icon" href="assets/icon/icon.svg" color="#000000"/>
-    <link rel="manifest" href="site.webmanifest"/>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <script type="text/javascript" src="assets/recto.js"></script>
-</head>
+					const element = document.currentScript.parentElement;
 
-<body onload="loadOptions()" onresize="windowResized()" onmousemove="moveRecto(false)" onmousedown="createRecto(false)" onmouseup="deleteRecto()">
-
-    <!-- OPTIONS -->
-    <div id="options" style="width: 0px">
-      <a href="javascript:void(0)" class="closebtn" onclick="triggerOptions()">x</a>
-      <div class="op_top">
-        <label for="op_night">Night mode:</label>
-        <input type="checkbox" id="op_night" onclick="optionsCheckbox('night')">
-      </div>
-
-      <div>
-        <label for="op_snapToGrid">Snap to grid:</label>
-        <input type="checkbox" id="op_snapToGrid" onclick="optionsCheckbox('snapToGrid')">
-      </div>
-
-      <div>
-        <label for="op_showGrid">Show grid:</label>
-        <input type="checkbox" id="op_showGrid" onclick="optionsCheckbox('showGrid')">
-      </div>
-
-      <div>
-        <label for="op_showLabel">Show label:</label>
-        <input type="checkbox" id="op_showLabel" onclick="optionsCheckbox('showLabel')">
-      </div>
-
-      <div class="op_btm">
-        <label for="op_showPermaRectos">Show rects:</label>
-        <input type="checkbox" id="op_showPermaRectos" onclick="optionsCheckbox('showPermaRectos')">
-      </div>
-      <br><br>
-      <div class="op_top op_btm"><a href="static.html" style="font-size: var(--textSmall)">Static version</a></div>
-    </div>
-
-
-
-    <!-- CONTENT -->
-    <main id="foreground">
-      <div id="box1" class="to_recto" min-x="13", min-y="2">
-        <div class="recto_inside">
-          <p>Marco Pagan<br><i>Information design/coding</i></p>
-        </div>
-      </div>
-
-
-      <!--min-x="10",min-y="3"-->
-      <div id="box2" class="to_recto" min-x="16", min-y="5">
-        <div class="recto_inside">
-          <p>I'm interested in learning, displaying information and parametric design.<br>My practice intersect coding and graphic design to produce both printed and digital content.</p>
-        </div>
-      </div>
-
-      <div id="box3" class="to_recto" min-x="15", min-y="5">
-        <div class="recto_inside">
-          <p>BA Graphic Design at <a href="https://isiaurbino.net" target="_blank">ISIA U</a> (IT).<br>
-          MA Information Design at <a href="https://www.designacademy.nl/" target="_blank">DAE</a> (NL).<br>
-          You can explore ma MA thesis from here: <a href="http://avoidingthebrick.net">avoidingthebrick.net </a><br>
-          Currently teaching at <a href="https://www.hku.nl/" target="_blank">HKU</a> (NL).</p>
-        </div>
-      </div>
-
-
-
-      <div id="box4" class="to_recto" min-x="4", min-y="3">
-        <div class="recto_inside">
-          <h3>Contacts</h3>
-          <p><a href="mailto:marco.pagan.one@gmail.com">Mail</a></p>
-          <p><a href="http://www.instagram.com/marcopagan" target="_blank">Instagram</a></p>
-        </div>
-      </div>
-
-
-
-      <div id="box5" class="to_recto" min-x="3", min-y="1" option="1">
-        <div class="recto_inside">
-          <p><a href="javascript:void(0)" onclick="triggerOptions()">Options</a></p>
-        </div>
-      </div>
-    </main>
-
-    <svg id="grid" style="stroke-width:0; fill-opacity: 1"></svg>
-    <svg id="liveRectos" style="stroke-width:3;"></svg>
-    <svg id="permaRectos" style="stroke-width:3;"></svg>
-    <div id="labels"></div>
-    <script type="text/javascript" src="assets/script.js"></script>
-    <script type="text/javascript">
-      setTimeout(() => {
-        document.getElementById("op_showPermaRectos").checked = !document.getElementById("op_showPermaRectos").checked;
-        switchPermaRectos();
-      }, 8200);
-    </script>
-
-
-
-
-
-
-
-
-</body>
+					Promise.all([
+						import("./app/immutable/entry/start.0cUfTaqB.js"),
+						import("./app/immutable/entry/app.CscDXA4v.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data: [{type:"data",data:null,uses:{}},{type:"data",data:{STARTING_RECTOS:[{id:0,x:16,y:16,wdt:300,hgt:48,content:"\u003Cp>Marco Pagan\u003Cbr>\u003Ci>Information design / coding\u003C/i>\u003C/p>",visibility:true},{id:1,x:16,y:96,wdt:300,hgt:48,content:"\u003Cp style='max-width: 26rem'>I'm interested in learning, displaying information and parametric design. My practice intersect coding and graphic design to produce both printed and digital content.\u003C/p>",visibility:true},{id:2,x:192,y:192,wdt:300,hgt:16,content:"BUTTON",visibility:true},{id:3,x:16,y:224,wdt:300,hgt:48,content:"\u003Ch3>CONTACTS\u003C/h3>\u003Cp>\u003Ca href='mailto:marco.pagan.one@gmail.com'>Mail\u003C/a>\u003C/p>\u003Cp>\u003Ca href='http://www.instagram.com/marcopagan' target='_blank'>Instagram\u003C/a>\u003C/p>",visibility:true},{id:4,x:16,y:16,wdt:300,hgt:48,content:"\u003Cp>Currently at \u003Ca href='https://calib.ro' target='_blank'>Studio Calibro\u003C/a>\u003C/p>",visibility:true},{id:5,x:16,y:16,wdt:300,hgt:48,content:"\u003Cp>BA Graphic Design at \u003Ca href=\"https://isiaurbino.net\" target=\"_blank\">ISIA U\u003C/a> (IT).\u003Cbr> MA Information Design at \u003Ca href=\"https://www.designacademy.nl/\" target=\"_blank\">DAE\u003C/a> (NL).\u003Cbr> You can explore ma MA thesis from here: \u003Ca href=\"http://avoidingthebrick.marcopagan.com\" target=\"_blank\">Avoiding the Brick\u003C/a>\u003C/p>",visibility:true},{id:6,x:16,y:16,wdt:300,hgt:48,content:"\u003Cp>Open for collaboration for:\u003Cul>\u003Cli>Information Design\u003C/li>\u003Cli>Frontend Design/Development\u003C/li>\u003Cli>Creative Coding\u003C/li>\u003Cli>Graphic Design\u003C/li>\u003C/ul>\u003C/p>",visibility:true}]},uses:{}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
 </html>

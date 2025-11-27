@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="16" height="16">
+  <g style="opacity: .25;">
+    <circle r="1.5" style="fill: #fff; stroke-width: 0px;"/>
+  </g>
+  <g style="opacity: .25;">
+    <circle cx="30" r="1.5" style="fill: #fff; stroke-width: 0px;"/>
+  </g>
+  <g style="opacity: .25;">
+    <circle cx="30" cy="30" r="1.5" style="fill: #fff; stroke-width: 0px;"/>
+  </g>
+  <g style="opacity: .25;">
+    <circle cy="30" r="1.5" style="fill: #fff; stroke-width: 0px;"/>
+  </g>
+</svg>
