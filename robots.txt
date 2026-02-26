@@ -1,3 +1,2 @@
 User-agent: * 
-Allow: / 
-Sitemap: https://marcopagan.com/sitemap.xml
+Allow: /
